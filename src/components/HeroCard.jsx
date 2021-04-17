@@ -48,7 +48,7 @@ class HeroCard extends React.Component {
                     <span className="text-sm text-white font-light cursor-auto"> #{this.state.id}</span>
                 </div>
                 <div className="flex flex-wrap item-center h-full w-2/4">
-                    <img className="mx-auto my-auto h-full w-28 object-cover" src={this.state.sprites ? (this.state.sprites.front_default) : ("https://i.pinimg.com/originals/2a/b1/3a/2ab13a4cebbf0cb6dd2cd5aa7e59abee.png")} alt="ditto" />
+                    <img className="mx-auto my-auto  object-cover" src={this.state.sprites ? (this.state.sprites.front_default) : ("https://i.pinimg.com/originals/2a/b1/3a/2ab13a4cebbf0cb6dd2cd5aa7e59abee.png")} alt="ditto" />
                 </div>
             </div>
 
