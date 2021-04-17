@@ -10,7 +10,7 @@ module.exports = {
        'lightGray3': '#EBEBEB',
        'lightGray4': '#D0D1D1',
        'darkGray': "434343",      
-       'orange': '#FF452B',
+       'orange': '#FE481B',
        'darkOrange': '#B2311F',
        'lightSkin': "#FFE7E3",
        'skin': "#FFB573"
@@ -22,7 +22,7 @@ module.exports = {
       'lightGray3': '#EBEBEB',
       'lightGray4': '#D0D1D1',
       'darkGray': "434343",      
-      'orange': '#FF452B',
+      'orange': '#FE481B',
       'darkOrange': '#B2311F',
       'lightSkin': "#FFE7E3",
       'skin': "#FFB573"
