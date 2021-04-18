@@ -20,7 +20,7 @@ class HeroCard extends React.Component {
     }
 
     getCapitalize(string){
-        return string ? string.charAt(0).toUpperCase() + string.slice(1) : "";
+        return string ? (string.charAt(0).toUpperCase() + string.slice(1)).replace("-", ".") : "";
     }
 
     async getPokemonData() {
@@ -36,7 +36,7 @@ class HeroCard extends React.Component {
             types: pokeData.types
         })
 
-        console.log(this.state.stats[0].base_stat)
+        /* console.log(this.state.stats[0].base_stat) */
     }
 
     render() {
