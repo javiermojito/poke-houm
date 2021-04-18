@@ -1,5 +1,7 @@
 import React from "react";
 import HeroCard from "../components/HeroCard.jsx";
+import Header from "../components/Header.jsx";
+
 
 class Home extends React.Component {
 
@@ -90,7 +92,7 @@ class Home extends React.Component {
             if (isNaN(parseInt(value))) {
                 value === "" ? (this.setState({
                     results: this.state.resultsTotal
-                })): this.filterByWord(e.target.value.toLowerCase());
+                })) : this.filterByWord(e.target.value.toLowerCase());
             }
             else {
                 const intValue = parseInt(value);
@@ -99,18 +101,15 @@ class Home extends React.Component {
                 })) : this.filterById(intValue);
             }
         }
-
     }
 
     render() {
         return <div>
             {/* Hero */}
-            <div>
-
-            </div>
+            <Header />
 
             {/* Filters */}
-            <div className="mt-0.5 h-24 bg-lightGray3 mx-auto flex justify-center items-center">
+            <div className="sticky top-0 mt-0.5 h-24 bg-lightGray3 mx-auto flex justify-center items-center">
                 <input className="w-7/12 h-12 shadow font-nunito bg-white text-center text-lg text-gray-500 font-light rounded-xl focus:ring-2 focus:outline-none transition duration-300 focus:ring-gray-300" type="text" name="wordFilter" onChange={this.handleChange} placeholder="ex: 1 or Pikachu" />
             </div>
 
