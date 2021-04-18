@@ -27,6 +27,9 @@ module.exports = {
       'lightSkin': "#FFE7E3",
       'skin': "#FFB573"
     }),
+    fontFamily: {      
+      nunito: ["Nunito"],
+    },
     extend: {},
   },
   variants: {
