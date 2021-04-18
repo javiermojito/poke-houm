@@ -110,8 +110,8 @@ class Home extends React.Component {
             </div>
 
             {/* Filters */}
-            <div className="mt-0.5 h-24 bg-lightGray1">
-                <input type="text" name="wordFilter" onChange={this.handleChange} placeholder="Ex: 1 or Pikachu" />
+            <div className="mt-0.5 h-24 bg-lightGray3 mx-auto flex justify-center items-center">
+                <input className="w-9/12 h-12 shadow bg-white text-center text-lg rounded-xl focus:ring-2 focus:outline-none transition duration-300 focus:ring-gray-300" type="text" name="wordFilter" onChange={this.handleChange} placeholder="Ex: 1 or Pikachu" />
 
             </div>
 
