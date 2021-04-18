@@ -24,27 +24,6 @@ class Home extends React.Component {
         this.getTypes()
     }
 
-    /*  getNumberTypes() {
-         console.log("hola?")
-         console.log(this.state.types)
-         this.state.types.forEach(type => {
-             
-             const total = this.state.results.map(pokemon => {
-                 console.log(pokemon)
-                 return pokemon.types.find(e => {
-                     return e.type.name === type;
-                 })
-             })
-             console.log(total)
-             let entry = {}
-             entry = entry[`total${type}`] = total.length;
- 
-             console.log(entry)
- 
-             this.setState(entry);
-         })
-     } */
-
     async getTypes() {
         const response = await fetch("https://pokeapi.co/api/v2/type");
         const types = await response.json();
@@ -132,33 +111,6 @@ class Home extends React.Component {
         })
     }
 
-    nextPage = () => {
-        fetch(this.state.next)
-            .then(res => {
-                res.json().then(r => {
-                    this.setState({
-                        next: r.next,
-                        previous: r.previous,
-                        results: r.results
-                    })
-                });
-            });
-    }
-
-    previuosPage = () => {
-        fetch(this.state.previous)
-            .then(res => {
-                res.json().then(r => {
-                    this.setState({
-                        next: r.next,
-                        previous: r.previous,
-                        results: r.results
-                    })
-                });
-            });
-
-    }
-
     handleChange = (e) => {
         if (e.target.name === "wordFilter") {
             const value = e.target.value;
@@ -214,8 +166,9 @@ class Home extends React.Component {
             <Header />
 
             {/* Filters */}
-            <div className=" lg:sticky top-0 mt-0.5 h-32 bg-lightGray3 flex flex-col justify-center items-center gap-y-2">
-                <div className="mx-auto flex justify-center items-center w-7/12">
+            <div className=" lg:sticky top-0 mt-0.5 h-32 bg-lightGray3 flex flex-col justify-center content-center items-center gap-y-2 md:flex-row mx-auto gap-x-3 justify-center">
+                {/* SearchBar */}
+                <div className="flex justify-center items-center w-7/12">
                     <div className="flex justify-center items-center h-12 bg-white rounded-l-xl pl-2 pr-2 shadow">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                             width="24" height="24"
@@ -225,19 +178,19 @@ class Home extends React.Component {
                     <input className="w-full h-12 shadow font-nunito bg-white text-center text-lg text-gray-500 font-light rounded-r-xl focus:ring-1 focus:outline-none transition duration-300 focus:ring-gray-300" type="text" name="wordFilter" onChange={this.handleChange} placeholder="ex: 1 or Pikachu" />
                 </div>
 
+                {/* Combobox */}
                 <div className="flex flex-row justify-center items-center shadow rounded-xl bg-white relative inline-flex">
                     <svg className="absolute top-0 right-0 m-4 pointer-events-none" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                         width="18" height="18"
                         viewBox="0 0 172 172"
                     ><g fill="none" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#cccccc"><path d="M154.75969,48.10625c-0.90031,0.02688 -1.76031,0.40313 -2.39187,1.06156l-66.36781,66.36781l-66.36781,-66.36781c-0.645,-0.67188 -1.53187,-1.03469 -2.45906,-1.04813c-1.41094,0.01344 -2.66063,0.86 -3.19813,2.15c-0.52406,1.30344 -0.215,2.78156 0.79281,3.7625l68.8,68.8c1.34375,1.34375 3.52062,1.34375 4.86437,0l68.8,-68.8c1.02125,-0.98094 1.33031,-2.49937 0.79281,-3.80281c-0.55094,-1.30344 -1.84094,-2.15 -3.26531,-2.12313z"></path></g></g></svg>
 
-                    <select onChange={this.handleSelect} className="rounded-xl font-nunito text-lg text-center text-gray-500 text-center h-12 pl-6 pr-12 appearance-none focus:outline-none focus:ring-1 focus:outline-none transition duration-300 focus:ring-gray-300" name="" id="">
+                    <select onChange={this.handleSelect} className=" bg-white rounded-xl font-nunito text-lg text-center text-gray-500 text-center h-12 pl-6 pr-12 appearance-none focus:outline-none focus:ring-1 focus:outline-none transition duration-300 focus:ring-gray-300" name="" id="">
                         <option value="Select type">Select type</option>
                         {this.state.types ? (this.state.types.map(value => {
                             return <option key={value} value={value}>{this.getCapitalize(value)}</option>
                         })) : (null)}
                     </select>
-
                 </div>
 
             </div >
@@ -251,12 +204,6 @@ class Home extends React.Component {
                         : (null)}
                 </div>
             </div >
-
-            {/* Paginación */}
-            {/* <div>
-                <button onClick={this.previuosPage}>Anterior</button>
-                <button onClick={this.nextPage}>Siguiente</button>
-            </div> */}
         </div >
     }
 }

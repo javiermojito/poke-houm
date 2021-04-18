@@ -8,7 +8,6 @@ const Header = () => {
             </h1 >
             <h2 className="text-white font-nunito font-semibold text-lg pl-6 pr-6">¡A <a className="underline" href="https://pokeapi.co/">PokeAPI</a> based application to know more to about your favorites Pokemons!</h2>
         </div>
-
     </div >
 }
 

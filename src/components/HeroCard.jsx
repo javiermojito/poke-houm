@@ -16,10 +16,6 @@ class HeroCard extends React.Component {
         }
     }
 
-    componentDidMount() {
-        /* this.getPokemonData(); */
-    }
-
     getCapitalize(string) {
         return string ? (string.charAt(0).toUpperCase() + string.slice(1)).replace("-", ".") : "";
     }
@@ -39,23 +35,9 @@ class HeroCard extends React.Component {
 
     }
 
-    /* async getPokemonData() {
-        const response = await fetch(this.props.url);
-        const pokeData = await response.json();
-        this.setState({
-            id: pokeData.id,
-            name: pokeData.name,
-            height: pokeData.height,
-            weight: pokeData.weight,
-            sprites: pokeData.sprites,
-            stats: pokeData.stats,
-            types: pokeData.types
-        })
-    } */
-
     render() {
-
         return <div className="flex flex-col shadow h-80 w-80 rounded-xl mx-auto cursor-pointer  transition-shadow hover:shadow-lg duration-400 ">
+
             {/* Header */}
             <div className="flex flex-row bg-orange items-center rounded-t-xl h-20">
                 <div className="flex flex-col pt-2 pb-2 pl-16 w-2/4">
