@@ -8,6 +8,7 @@ const Layout = (props) => {
         <div className="relative h-full">
             <NavBar />
             {props.children}
+            <Footer />
         </div>
     )
 }

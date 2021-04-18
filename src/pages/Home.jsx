@@ -109,12 +109,12 @@ class Home extends React.Component {
             <Header />
 
             {/* Filters */}
-            <div className="sticky top-0 mt-0.5 h-24 bg-lightGray3 mx-auto flex justify-center items-center">
+            <div className=" lg:sticky top-0  mt-0.5 h-24 bg-lightGray3 mx-auto flex justify-center items-center">
                 <input className="w-7/12 h-12 shadow font-nunito bg-white text-center text-lg text-gray-500 font-light rounded-xl focus:ring-2 focus:outline-none transition duration-300 focus:ring-gray-300" type="text" name="wordFilter" onChange={this.handleChange} placeholder="ex: 1 or Pikachu" />
             </div>
-
+            
             {/* Cards */}
-            <div className="flex justify-center pt-10 pb-10">
+            <div className="flex justify-center pt-12 pb-12">
                 <div className="grid grid-cols-1 gap-11 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
                     {this.state.results ? (this.state.results.map(({ id, name, height, weight, sprites, stats, types }) => {
                         return <HeroCard key={id} id={id} name={name} height={height} weight={weight} sprites={sprites} stats={stats} types={types} />

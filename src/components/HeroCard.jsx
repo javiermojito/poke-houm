@@ -68,7 +68,7 @@ class HeroCard extends React.Component {
             </div>
 
             {/* Types */}
-            <div className="flex flex-row justify-center w-full h-28 bg-darkOrange items-center gap-x-2">
+            <div className="flex flex-row justify-center w-full h-28 bg-darkGray items-center gap-x-2">
                 {this.state.types ? (this.state.types.map(function (data) {
                     return (
                         <div className="bg-red-400 rounded-full text-center h-7 pl-3 pr-3 pb-1">
