@@ -6,17 +6,18 @@ class HeroCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: 0,
-            name: "",
-            height: 0,
-            weight: 0,
-            sprites: {},
-            stats: [],
+            id: props.id,
+            name: props.name,
+            height: props.height,
+            weight: props.weight,
+            sprites: props.sprites,
+            stats: props.stats,
+            types: props.types
         }
     }
 
     componentDidMount() {
-        this.getPokemonData();
+        /* this.getPokemonData(); */
     }
 
     getCapitalize(string){
@@ -56,7 +57,7 @@ class HeroCard extends React.Component {
                 {this.state.types ? (this.state.types.map(function (data) {
                     return (
                         <div className="bg-red-400 rounded-full text-center h-7 pl-3 pr-3 pb-1">
-                            <span className="text-white text-xs font-medium cursor-auto">{data.type.name.charAt(0).toUpperCase() + data.type.name.slice(1)}</span>
+                            <span key={data.type.name} className="text-white text-xs font-medium cursor-auto">{data.type.name.charAt(0).toUpperCase() + data.type.name.slice(1)}</span>
                         </div>
                     )
                 })) : (null)
