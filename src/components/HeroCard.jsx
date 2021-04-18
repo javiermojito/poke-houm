@@ -81,7 +81,7 @@ class HeroCard extends React.Component {
 
             {/* Stats */}
             <div className="flex flex-wrap bg-white h-full w-full items-center justify-center">
-                <div className="grid grid-cols-6 gap-0 gap-x-1 content-center items-center ml-7 mr-6">
+                <div className="grid grid-cols-6 gap-0 gap-x-2 content-center items-center ml-4 mr-4">
                     {/* HP */}
                     <span className="text-xs font-semibold col-span-2 cursor-auto">HP</span>
                     <span className="text-xs font-normal text-center cursor-auto">{this.state.stats[0] ? (this.state.stats[0].base_stat) : (null)}</span>
